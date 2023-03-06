@@ -11,9 +11,10 @@ export class OtpserviceService {
 
   constructor(private http: HttpClient) { }
 
-  private otpurl:string = '';
+  private otpurl:string = 'http://localhost:8080/sendMail';
    sendOtp(emaildetails:EmailDetails):Observable<boolean> { 
 
+    console.log("inside service"+emaildetails.emailaddress)
    return this.http.post<boolean>(this.otpurl,emaildetails);
 
   }
