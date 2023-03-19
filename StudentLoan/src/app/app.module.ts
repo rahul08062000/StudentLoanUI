@@ -6,13 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+//import { OtpServiceComponent } from './service/otp-service/otp-service.component';
+import { OtpPageComponent } from './components/otp-page/otp-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SignUpComponent
+    SignUpComponent,
+    OtpPageComponent
   ],
   imports: [
     BrowserModule,
