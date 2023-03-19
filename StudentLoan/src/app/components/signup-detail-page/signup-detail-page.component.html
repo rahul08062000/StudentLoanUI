@@ -1,0 +1,50 @@
+<div  class = "container">
+    
+<div class="card shadow-sm p-3 mb-5 bg-white rounded  mx-auto mt-5" style="width: 25rem;height: 40rem;">
+    <div class="card-header text-center">
+      Signup
+    </div>
+    <div class="card-body ">
+        <form #userdetail ="ngForm" (ngSubmit)="onClickSubmit(userdetail.value)">
+            <div class="form-group">
+              <p >First Name</p>
+              <input type="text" class="form-control" name="firstname" aria-describedby="emailHelp" placeholder="Enter First Name" ngModel required minlength="4"  #name="ngModel" >
+            </div>
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+              class="alert" >
+          
+            <div *ngIf="name.errors?.['required']">
+              Name is required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+              Name must be at least 4 characters long.
+            </div></div>
+          <div class="form-group">
+              <p for="exampleInputEmail1">Last Name</p>
+              <input type="text" class="form-control" name="lastname" aria-describedby="emailHelp" placeholder="Enter Last Name" ngModel>
+            </div>
+            <div class="form-group">
+              <p for="exampleInputEmail1">Date of birth</p>
+              <input type="text" class="form-control" name="dateofbirth" aria-describedby="emailHelp" placeholder="Enter Date of Birth" ngModel>
+            </div>
+            <div class="form-group">
+              <p for="exampleInputEmail1">PAN Number</p>
+              <input type="text" class="form-control" name="pannumber" aria-describedby="emailHelp" placeholder="Enter PAN Number" ngModel>
+            </div>
+            <div class="form-group">
+                <p for="exampleInputEmail1">Password</p>
+                <input type="text" class="form-control" name="password" aria-describedby="emailHelp" placeholder="Enter Password" ngModel>
+              </div>
+              <div class="form-group">
+                <p for="exampleInputEmail1">Confirm Password</p>
+                <input type="text" class="form-control" name="confirmpassword" aria-describedby="emailHelp" placeholder="Confirm Password " ngModel>
+              </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          </form>
+    </div>
+    
+  </div>
+</div>
+
+
