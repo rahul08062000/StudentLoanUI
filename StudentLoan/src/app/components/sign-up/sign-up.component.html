@@ -10,9 +10,9 @@
                             <div class="form-group mb-2">
                               <label>Email</label>
                               <input type="email" class="form-control" placeholder="Enter Here" name="emailaddress"
-                              [(ngModel)]="emailDetails.emailaddress">
+                              [(ngModel)]="emailDetails.emailaddress" >
                             </div>
-                            
+                            <p class="" *ngIf="!sentotp">OTP is not sent,Please try again</p>
                             <div>
                                 <button (click) = "onSend()">Send OTP</button>
                             </div>

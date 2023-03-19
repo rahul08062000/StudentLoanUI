@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EmailDetails } from 'src/app/model/EmailDetails';
 import { OtpserviceService } from 'src/app/service/otpservice.service';
 
@@ -12,8 +13,8 @@ export class SignUpComponent implements OnInit {
   public emailDetails:EmailDetails ={
     emailaddress:''
   } ;
-  public sentotp:any;
-  constructor( private otpserviceservice :OtpserviceService) { 
+  public sentotp:boolean=true;
+  constructor( private otpserviceservice :OtpserviceService ,private router : Router) { 
 
   }
 
@@ -26,6 +27,10 @@ export class SignUpComponent implements OnInit {
     this.otpserviceservice.sendOtp(this.emailDetails).subscribe((data: any)=>{
       this.sentotp = data;
       console.log(data);
+this.router.navigate(['/enterotp',{emailaddress:this.emailDetails.emailaddress}]);
+       },(error)=>{
+        this.sentotp = false;
+console.log(error);
        })
 }
 

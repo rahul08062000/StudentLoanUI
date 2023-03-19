@@ -1,3 +1,3 @@
-export class EmailDetails{
-    emailaddress:string ='';
+export interface EmailDetails{
+    emailaddress:string;
 }
